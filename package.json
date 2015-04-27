@@ -1,0 +1,33 @@
+{
+  "name": "webpack-skel",
+  "version": "0.0.1",
+  "description": "simple webpack template for authoring new components",
+  "main": "./src/index.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "test": "testem",
+    "prebuild": "npm run clean -s",
+    "build": "webpack --verbose --colors --display-error-details && webpack --config webpack.config.dist.js --colors",
+    "build-test": "webpack --config webpack.config.test.js",
+    "postbuild": "npm test",
+    "dev": "npm start",
+    "start": "webpack-dev-server --config webpack.config.dev-server.js --colors --progress --hot --no-info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fmal/webpack-skel"
+  },
+  "homepage": "https://github.com/fmal/webpack-skel",
+  "keywords": [],
+  "dependencies": {
+    "domify": "~1.3.3"
+  },
+  "devDependencies": {
+    "raw-loader": "~0.5.1",
+    "rimraf": "~2.3.2",
+    "tape": "~4.0.0",
+    "testem": "~0.8.3",
+    "webpack": "~1.8.10",
+    "webpack-dev-server": "~1.8.2"
+  }
+}
